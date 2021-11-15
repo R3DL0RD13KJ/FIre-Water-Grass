@@ -43,32 +43,37 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-ft-GeQ">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-ft-GeQ">
                                         <rect key="frame" x="0.0" y="568" width="414" height="150"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q38-eG-DsK">
-                                                <rect key="frame" x="0.0" y="0.0" width="138" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="134.5" height="150"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zer-rM-Hc4">
-                                                <rect key="frame" x="138" y="0.0" width="138" height="150"/>
+                                                <rect key="frame" x="139.5" y="0.0" width="135" height="150"/>
+                                                <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBA-cs-f9e">
-                                                <rect key="frame" x="276" y="0.0" width="138" height="150"/>
+                                                <rect key="frame" x="279.5" y="0.0" width="134.5" height="150"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="M3S-6b-AaF"/>
                                             <constraint firstAttribute="height" constant="150" id="e1N-4g-8WH"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="6XM-Xb-m1K" appends="YES" id="tRf-oN-UmS"/>
+                                        </connections>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uvz-aP-Tqv">
                                         <rect key="frame" x="0.0" y="718" width="414" height="100"/>
@@ -89,8 +94,21 @@
                             <constraint firstItem="d69-We-GSf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="obv-JN-bfP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="elementChoices" destination="EN3-ft-GeQ" id="U4f-Ug-et3"/>
+                        <outlet property="randomAIElement" destination="zCN-op-XEk" id="Y33-wY-dms"/>
+                        <outlet property="yourElementChoice" destination="dCM-Dx-WyY" id="OUp-qo-mMZ"/>
+                        <outletCollection property="elementPick" destination="Q38-eG-DsK" collectionClass="NSMutableArray" id="2Ux-xB-hry"/>
+                        <outletCollection property="elementPick" destination="Zer-rM-Hc4" collectionClass="NSMutableArray" id="n7h-jK-KRF"/>
+                        <outletCollection property="elementPick" destination="LBA-cs-f9e" collectionClass="NSMutableArray" id="bh1-ar-Sxt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6XM-Xb-m1K">
+                    <connections>
+                        <action selector="whenTapped:" destination="BYZ-38-t0r" id="aQq-ZQ-AHK"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="124.6376811594203" y="73.660714285714278"/>
         </scene>
