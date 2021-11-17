@@ -33,12 +33,11 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let fireImage = String(named: "Fire")
-        let grassImage = String(named: "Grass")
-        let waterImage = String(named: "Water")
+        let fireImage = UIImage(named: "Fire")
+        let grassImage = UIImage(named: "Grass")
+        let waterImage = UIImage(named: "Water")
         
-        let images = [fireImage, grassImage, waterImage]
-        //as! [UIImage]
+        let images = [fireImage, grassImage, waterImage] as! [UIImage]
     }
 
     @IBAction func whenTapped(_ sender: Any)
@@ -49,8 +48,22 @@ class ViewController: UIViewController
         {
             if image.frame.contains(seleectedpoint)
             {
-                userPicks = view.tag
-                yourElementChoice
+                let userPicks = image.tag
+                if userPicks == 0
+                {
+                    yourElementChoice.text = "Fire"
+                    
+                }
+                if userPicks == 1
+                {
+                    yourElementChoice.text = "Grass"
+                    
+                }
+                if userPicks == 2
+                {
+                    yourElementChoice.text = "Water"
+                    
+                }
             }
         }
     }
