@@ -90,6 +90,7 @@
                     <connections>
                         <outlet property="elementChoices" destination="EN3-ft-GeQ" id="U4f-Ug-et3"/>
                         <outlet property="randomAIElement" destination="zCN-op-XEk" id="Y33-wY-dms"/>
+                        <outlet property="winnerLabel" destination="cPc-jD-9eN" id="8qW-qn-7qg"/>
                         <outlet property="yourElementChoice" destination="dCM-Dx-WyY" id="OUp-qo-mMZ"/>
                         <outletCollection property="optionalPicks" destination="D3b-kD-tQr" collectionClass="NSMutableArray" id="19b-Bx-gFl"/>
                         <outletCollection property="optionalPicks" destination="huM-4D-Fs3" collectionClass="NSMutableArray" id="u3F-Yu-DS4"/>

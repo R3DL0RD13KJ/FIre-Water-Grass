@@ -18,6 +18,7 @@ class ViewController: UIViewController
     
     @IBOutlet weak var elementChoices: UIStackView!
     
+    @IBOutlet weak var winnerLabel: UILabel!
     
     var elementFire = "Fire"
     var elementWater = "Water"
@@ -52,20 +53,76 @@ class ViewController: UIViewController
                 if userPicks == 0
                 {
                     yourElementChoice.text = "Fire"
-                    
                 }
                 if userPicks == 1
                 {
                     yourElementChoice.text = "Grass"
-                    
                 }
                 if userPicks == 2
                 {
                     yourElementChoice.text = "Water"
-                    
                 }
             }
+            
+            
         }
+        
+        
+        let randomNumber = Int.random(in: 0...2)
+        if randomNumber == 0
+        {
+            randomAIElement.text = "Fire"
+            
+        }
+        if randomNumber == 1
+        {
+            randomAIElement.text = "Grass"
+            
+        }
+        if randomNumber == 2
+        {
+            randomAIElement.text = "Water"
+            
+        }
+        
+        if randomNumber == 0 &&  userPicks == 0
+        {
+            winnerLabel.text = "Thats a Draw"
+        }
+        else if randomNumber == 1 && userPicks == 1
+        {
+            winnerLabel.text = "Thats a Draw"
+        }
+        else if randomNumber == 2 && userPicks == 2
+        {
+            winnerLabel.text = "Thats a Draw"
+        }
+        else if randomNumber == 0 && userPicks == 1
+        {
+            winnerLabel.text = "You Lose"
+        }
+        else if randomNumber == 1 && userPicks == 2
+        {
+            winnerLabel.text = "You Lose"
+        }
+        else if randomNumber == 2 && userPicks == 0
+        {
+            winnerLabel.text = "You Lose"
+        }
+        else if randomNumber == 0 && userPicks == 2
+        {
+            winnerLabel.text = "You Win"
+        }
+        else if randomNumber == 1 && userPicks == 0
+        {
+            winnerLabel.text = "You Win"
+        }
+        else if randomNumber == 2 && userPicks == 1
+        {
+            winnerLabel.text = "You Win"
+        }
+        
+        
     }
     
     
