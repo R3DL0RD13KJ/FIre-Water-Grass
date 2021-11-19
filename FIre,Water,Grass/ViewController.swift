@@ -49,19 +49,21 @@ class ViewController: UIViewController
         {
             if image.frame.contains(seleectedpoint)
             {
-                let userPicks = image.tag
+                userPicks = image.tag
                 if userPicks == 0
                 {
                     yourElementChoice.text = "Fire"
-                }
-                if userPicks == 1
+                }else if userPicks == 1
                 {
                     yourElementChoice.text = "Grass"
-                }
-                if userPicks == 2
+                }else if userPicks == 2
                 {
                     yourElementChoice.text = "Water"
+                }else
+                {
+                    yourElementChoice.text = "None"
                 }
+                
             }
             
             
@@ -74,15 +76,19 @@ class ViewController: UIViewController
             randomAIElement.text = "Fire"
             
         }
-        if randomNumber == 1
+        else if randomNumber == 1
         {
             randomAIElement.text = "Grass"
             
         }
-        if randomNumber == 2
+        else if randomNumber == 2
         {
             randomAIElement.text = "Water"
             
+        }
+        else
+        {
+            randomAIElement.text = "None"
         }
         
         if randomNumber == 0 &&  userPicks == 0
@@ -122,6 +128,10 @@ class ViewController: UIViewController
             winnerLabel.text = "You Win"
         }
         
+        
+        
+        //print(userPicks)
+        //print(randomNumber)
         
     }
     
