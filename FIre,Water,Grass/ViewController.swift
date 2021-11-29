@@ -138,10 +138,10 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate
     
     @IBAction func ruleOutbook(_ sender: Any)
     {
-        ruleOutbook(resignFirstResponder())
+        //ruleOutbook(resignFirstResponder())
        // guard let URLruleOutbook = ruleOutbook.text else { return }
         
-        let unchartedURL = "https://www.wikipedia.org"
+        let unchartedURL = "https://docs.google.com/presentation/d/1sevveLDiYDNlYINkG_pI1T2rezaXClZkoHjqhcbC0_0/edit?usp=sharing"
         let myUrl = URL(string: unchartedURL)
         let svc = SFSafariViewController(url: myUrl!)
         svc.delegate = self
