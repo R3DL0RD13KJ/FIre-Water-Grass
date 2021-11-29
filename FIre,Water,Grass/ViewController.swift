@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SafariServices
+class ViewController: UIViewController, SFSafariViewControllerDelegate
 
-class ViewController: UIViewController
 {
 
     @IBOutlet weak var randomAIElement: UILabel!
@@ -129,18 +130,22 @@ class ViewController: UIViewController
         }
         
         
-        //print(userPicks)
-        //print(randomNumber)
+//        print(userPicks)
+//        print(randomNumber)
         
     }
     
     
     @IBAction func ruleOutbook(_ sender: Any)
     {
-        ruleOutbook.resignFirstResponder()
-        guard let urlAddOn = ruleOutbook else { return }
-        let unchartedURL = "https://docs.google.com/presentation/d/1sevveLDiYDNlYINkG_pI1T2rezaXClZkoHjqhcbC0_0/edit?usp=sharing"
-        let fullURLPath = unchartedURL + urlAddOn
+        ruleOutbook(resignFirstResponder())
+       // guard let URLruleOutbook = ruleOutbook.text else { return }
+        
+        let unchartedURL = "https://www.wikipedia.org"
+        let myUrl = URL(string: unchartedURL)
+        let svc = SFSafariViewController(url: myUrl!)
+        svc.delegate = self
+        self.present(svc, animated: true, completion: nil)
     }
     
     
